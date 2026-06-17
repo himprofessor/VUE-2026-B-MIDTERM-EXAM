@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div v-if="tasks.length > 0" class="card">
     <TaskCard 
       v-for="task in tasks" 
       :key="task.id" 
@@ -9,6 +9,10 @@
       @delete-task="$emit('deleteTask', task)"
     />
   </div>
+ <div v-else class="empty-state">
+    <div class="empty-icon">Don't have Task !</div>
+    <p>Has no task for today, enjoy your time!</p>
+</div>
 </template>
 
 <script setup>
@@ -34,5 +38,31 @@ defineEmits(["viewTaskDetails", "completeTask", "deleteTask"]);
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #dfe4ea;
+  max-width: 500px;
+  margin: 40px auto 0 auto;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  margin: 0;
 }
 </style>
