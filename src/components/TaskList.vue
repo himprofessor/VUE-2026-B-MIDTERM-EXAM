@@ -14,9 +14,11 @@ const emit = defineEmits(['complete', 'delete']);
 
 <template>
   <div class="task-list">
-    <p v-if="tasks.length === 0" class="empty-message">No tasks available.</p>
-    
-    
+    <div v-if="tasks.length === 0" class="empty-message">
+        <h2>No tasks left!</h2>
+         <p>Enjoy your free time 🎉</p>
+    </div>
+
     <TaskCard 
       v-for="task in tasks" 
       :key="task.id" 
@@ -25,6 +27,7 @@ const emit = defineEmits(['complete', 'delete']);
       @delete="(id) => emit('delete', id)"
     />
   </div>
+  
 </template>
 
 <style scoped>
