@@ -14,7 +14,7 @@
 
       <!-- Status -->
        <span>Status: </span>
-      <span :style="{ color: status[task.id] ? 'green' : 'red' }">{{ status[task.id] ?   "Completed":"Pedding" }}</span>
+      <span :style="{ color: status[task.id] ? 'green' : 'blue' }">{{ status[task.id] ?   "Completed":"Pedding" }}</span>
 
       <div class="btn">
         <!-- button  -->
