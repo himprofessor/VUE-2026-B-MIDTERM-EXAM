@@ -102,7 +102,7 @@ Your finished application should contain the following parts. Use this wireframe
 | **Task List** | The container that renders all task cards. |
 | **Task Card** | A single card showing one task's title, status, and buttons. |
 | **Buttons** | A **Complete** button and a **Delete** button on each task. |
-| **Status Badge** | A small label showing whether a task is *Pending* or *Completed*. |
+| **Status Badge** | A small label showing whethder a task is *Pending* or *Completed*. |
 | **Empty State** | A friendly message shown when no tasks remain. |
 
 ---
