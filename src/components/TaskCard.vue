@@ -3,28 +3,32 @@
     
     <BaseCard>
             <div class="task-card">
+
                 <h4 class="title"> {{ task.title }}</h4>
 
-<span class="status" :class="task.completed  ?   'completed': 'pending'">
+                <span class="status" :class="task.completed  ?   'completed': 'pending'">
                         {{ task.completed ? "Completed ": "Pending " }}
                 </span>
-
         
                 <div class="actions">
-<button class="btn-complete" @click="emitComplete"> Complete</button>
+                    <button class="btn-complete" @click="emitComplete"> Complete</button>
                     <button class="btn-delete" @click="emitDelete"> Delete</button>
+
                 </div>
-            </div>
+
+         </div>
+
     </BaseCard>
 
 </template>
 
 <script setup>
-import BaseCard from './BaseCard.vue';
+    import BaseCard from './BaseCard.vue';
 
 const emit =defineEmits(['complete', 'delete'])
 
 const props = defineProps ({
+
     task: {
         type: Object,
         required: true,
@@ -36,6 +40,8 @@ const props = defineProps ({
 
 const emitComplete = () => emit('complete',   props.task.id)
 const emitDelete = () => emit('delete',   props.task.id)
+
+
 </script>
 
 <style scoped>
@@ -51,7 +57,7 @@ const emitDelete = () => emit('delete',   props.task.id)
 }
 
 .actions{
-    display: inline-flex;
+   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-weight: 600;
@@ -64,17 +70,20 @@ const emitDelete = () => emit('delete',   props.task.id)
     color: rgb(233, 231, 228);
     background: #f19c3b;
     padding: 12px;
+      border-radius: 12px;
 }
 
-.complete{
-    color: green;
-    background: #1f921b;
+.completed{
+    color: white;
+    background: #134211;
     padding: 12px;
+    border-radius: 12px;
 }
+
 
 
 .btn-complete {
-  background: #90d45c;
+  background: #c5b911;
   color: white;
    border: none;
   border-radius: 8px;

@@ -4,19 +4,21 @@
   <div class="app">
     <header class="header">
 
+      
     <div class="left">
        <h1 class="title">My Task</h1> 
        <p class="subtitle"> 
         {{ tasks.length }}
-        Task Today: 
+              Task Today: 
        </p>
     
     </div>
 
     <div class="right" aria-hidden="true">
+
       <div class="pill">
-        {{ countPading }}
-        Pending
+           {{ countPading }}
+                  Pending
       </div>
 
       <div class=" pill pill-complete">
@@ -81,8 +83,10 @@ const countComplete= computed(() => {
 
 
 const deleteHandle = (taskId) => {
-  tasks.value = tasks.value.filters(task => task.id !== taskId)
+  // remove the task with matching id
+  tasks.value = tasks.value.filter(task => task.id !== taskId)
 }
+
 
 
 const completeHandle = (taskId) => {
@@ -117,7 +121,7 @@ const completeHandle = (taskId) => {
   padding: 16px 18px;
   border-radius: 14px;
   border: 1px solid gray;
-  background: #514c4c;
+  background: #7f95ec;
 }
 .title {
   margin: 0;
@@ -134,6 +138,10 @@ const completeHandle = (taskId) => {
   gap: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+h1{
+  color: white;
 }
 
 .pill {
