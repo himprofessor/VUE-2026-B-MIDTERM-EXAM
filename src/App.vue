@@ -4,8 +4,9 @@
   <div class="app">
     <header class="header">
 
-      
+
     <div class="left">
+      
        <h1 class="title">My Task</h1> 
        <p class="subtitle"> 
         {{ tasks.length }}
@@ -83,7 +84,8 @@ const countComplete= computed(() => {
 
 
 const deleteHandle = (taskId) => {
-  // remove the task with matching id
+
+
   tasks.value = tasks.value.filter(task => task.id !== taskId)
 }
 
