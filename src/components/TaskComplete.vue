@@ -1,0 +1,44 @@
+<template>
+  <div class="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center p-4 z-50">
+    <div class="bg-white rounded-lg p-6 max-w-sm w-full text-center shadow-lg">
+      <h2 class="text-xl font-bold text-gray-900 mb-2">Task Management</h2>
+      <div class="border-b border-gray-200 mb-4"></div>
+
+      <div class="text-left bg-gray-50 p-4 rounded mb-4 text-sm space-y-1">
+        <p><strong>Title:</strong> {{ task.title }}</p>
+        <p><strong>Status:</strong> {{ task.completed }}</p>
+      </div>
+
+      <button
+        @click="$emit('close')"
+        class="bg-gray-700 text-white w-full py-2 rounded text-sm hover:bg-gray-800"
+      >
+        Close
+      </button>
+
+      <button 
+      @click="$emit('submitComplete')"
+        class="bg-gray-700 text-white w-full py-2 rounded text-sm hover:bg-gray-800"
+       >
+        complete
+      </button>
+    </div>
+  </div>
+</template>
+
+<script setup>
+
+
+defineProps({
+  task: Object,
+})
+
+defineEmits(['close', 'complete'])
+
+const submitComplete = () => {
+  if (props.task && props.task.id) {
+    emit('complete', props.task.id)
+  }
+}
+
+</script>
