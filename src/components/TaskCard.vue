@@ -12,7 +12,7 @@
             props.com === 'Completed' ? 'bg-green-500' : 'bg-orange-500'
           "
         >
-          {{ props.taskComplete }}
+          {{ props.taskCompleted }}
         </span>
       </div>
     </div>

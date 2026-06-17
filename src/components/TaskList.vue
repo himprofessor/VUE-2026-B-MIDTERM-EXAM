@@ -4,7 +4,7 @@
         :key="task.id"
         :task-id="task.id"
         :task-title="task.title"
-        :task-completed="task.complete"
+        :task-completed="task.completed"
         @complete="handleComplete"
         @delete="handleDelete" />
     </div>
